@@ -11,6 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login','AuthController@login')->name('login');
+Route::post('/login','AuthController@processLogin')->name('login.submit');
+Route::get('/dashboard','AuthController@dashboard')->name('dashboard');
+Route::get('/home','AuthController@home')->name('home')->middleware('role');
