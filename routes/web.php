@@ -20,3 +20,10 @@ Route::get('/login','AuthController@login')->name('login');
 Route::post('/login','AuthController@processLogin')->name('login.submit');
 Route::get('/dashboard','AuthController@dashboard')->name('dashboard');
 Route::get('/home','AuthController@home')->name('home')->middleware('role');
+Route::group(['prefix'=>'role'],function(){
+    Route::get('/','RoleController@index')->name('role.index');
+    Route::post('/','RoleController@store')->name('role.store');
+    Route::get('/create','RoleController@create')->name('role.create');
+
+});
+

@@ -8,7 +8,7 @@
     <a href="#" class="brand-link">
         <img src="{{ asset('dist/img/prod-2.jpg')  }}" alt="" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">{NAVAN TRADING</span>
+        <span class="brand-text font-weight-light">NAVAN TRADING</span>
     </a>
 
     <!-- Sidebar -->
