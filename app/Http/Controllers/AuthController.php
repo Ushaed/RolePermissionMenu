@@ -14,9 +14,7 @@ class AuthController extends Controller
 
     public function processLogin(Request $request)
     {
-//        return $request;
         $credentials = $request->except('_token');
-//        dd($credentials);
         if (auth()->attempt($credentials)){
             return redirect()->route('dashboard');
         }
@@ -30,5 +28,11 @@ class AuthController extends Controller
     public function home()
     {
         return 'home';
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

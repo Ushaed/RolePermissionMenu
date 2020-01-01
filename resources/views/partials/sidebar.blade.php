@@ -37,86 +37,57 @@
                         </p>
                     </a>
                 </li>
-{{--                <li class="nav-item has-treeview {{$prefix == '/users'? 'menu-open' : ''}}">--}}
-{{--                    <a href="#" class="nav-link {{$prefix == '/users'? 'active' : ''}}">--}}
-{{--                        <i class="nav-icon fa fa-users"></i>--}}
-{{--                        <p>--}}
-{{--                            <i class="fas fa-angle-left right"></i>--}}
-{{--                            <span class="badge badge-info right"></span>--}}
-{{--                            Users--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <ul class="nav nav-treeview">--}}
-{{--                        @if($user['data']['user_type'] == 'manager')--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{ route('users.create') }}"--}}
-{{--                               class="nav-link {{$route == 'users.create'?'active' : ''}}">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Add User</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        @endif--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{ route('users.index') }}" id="manage_users_sidebar"--}}
-{{--                               class="nav-link {{ $route == 'users.index' ? 'active': '' }}">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Manage Users</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link ">
-                        <i class="nav-icon fas fa-code-branch"></i>
+                <li class="nav-item has-treeview {{$prefix == '/role'? 'menu-open' : ''}}">
+                    <a href="#" class="nav-link {{$prefix == '/role'? 'active' : ''}}">
+                        <i class="nav-icon fa fa-users"></i>
                         <p>
-                            Brands
+                            <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right"></span>
+                            Role Management
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('role.create') }}"
+                               class="nav-link {{$route == 'role.create'?'active' : ''}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Role</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('role.index') }}" id="manage_users_sidebar"
+                               class="nav-link {{ $route == 'role.index' ? 'active': '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Manage Role</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview {{ $prefix == '/permissions' ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $prefix == '/permissions' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-chess"></i>
+                        <p>
+                            Permissions
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href=""
-                               class="nav-link">
+                               class="nav-link {{ $route == 'permissions.create' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Brands</p>
+                                <p>Add Permission</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" id="manage_brands_sidebar"
-                               class="nav-link ">
+                            <a href="{{ route('permissions.index') }}" id="manage_categories_sidebar"
+                               class="nav-link {{ $route == 'permissions.index' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Manage Brands</p>
+                                <p>Manage Permission</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-{{--                <li class="nav-item has-treeview {{ $prefix == '/categories' ? 'menu-open' : '' }}">--}}
-{{--                    <a href="#" class="nav-link {{ $prefix == '/categories' ? 'active' : '' }}">--}}
-{{--                        <i class="nav-icon fas fa-chess"></i>--}}
-{{--                        <p>--}}
-{{--                            Category--}}
-{{--                            <i class="fas fa-angle-left right"></i>--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
-{{--                    <ul class="nav nav-treeview">--}}
-{{--                        @if($user['data']['user_type'] == 'manager')--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{ route('categories.create') }}"--}}
-{{--                               class="nav-link {{ $route == 'categories.create' ? 'active' : '' }}">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Add Category</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        @endif--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="{{ route('categories.index') }}" id="manage_categories_sidebar"--}}
-{{--                               class="nav-link {{ $route == 'categories.index' ? 'active' : '' }}">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Manage Categories</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
 {{--                <li class="nav-item has-treeview {{ $prefix == '/products' ? 'menu-open' : '' }}">--}}
 {{--                    <a href="#" class="nav-link {{ $prefix == '/products' ? 'active' : '' }}">--}}
 {{--                        <i class="nav-icon fas fa-feather"></i>--}}

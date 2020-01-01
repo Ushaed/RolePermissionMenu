@@ -12,18 +12,34 @@
 */
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/login','AuthController@login')->name('login');
+Route::get('/','AuthController@login')->name('login')->middleware('guest');
 Route::post('/login','AuthController@processLogin')->name('login.submit');
-Route::get('/dashboard','AuthController@dashboard')->name('dashboard');
-Route::get('/home','AuthController@home')->name('home')->middleware('role');
-Route::group(['prefix'=>'role'],function(){
-    Route::get('/','RoleController@index')->name('role.index');
-    Route::post('/','RoleController@store')->name('role.store');
-    Route::get('/create','RoleController@create')->name('role.create');
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/dashboard','AuthController@dashboard')->name('dashboard');
+    Route::get('/logout','AuthController@logout')->name('logout');
+    Route::get('/home','AuthController@home')->name('home')->middleware('role');
+    Route::group(['prefix'=>'role'],function(){
+        Route::get('/','RoleController@index')->name('role.index');
+        Route::post('/','RoleController@store')->name('role.store');
+        Route::get('/create','RoleController@create')->name('role.create');
+        Route::get('/{id}','RoleController@show')->name('role.show');
+        Route::put('/{id}','RoleController@update')->name('role.update');
+        Route::get('/edit/{id}','RoleController@edit')->name('role.edit');
+        Route::post('/store/ajax','RoleController@storeajax')->name('role.store.ajax');
+        Route::get('/exist','RoleController@exist')->name('role.exist');
 
+    });
+    Route::group(['prefix'=>'permissions'],function(){
+        Route::get('/','PermissionController@index')->name('permissions.index');
+        Route::post('/','PermissionController@store')->name('permissions.store');
+        Route::get('/create','PermissionController@create')->name('permissions.create');
+        Route::get('/{id}','PermissionController@show')->name('permissions.show');
+        Route::put('/{id}','PermissionController@update')->name('permissions.update');
+        Route::get('/edit/{id}','PermissionController@edit')->name('permissions.edit');
+        Route::post('/store/ajax','PermissionController@storeajax')->name('permissions.store.ajax');
+        Route::get('/exist','PermissionController@exist')->name('permissions.exist');
+
+    });
 });
+
 

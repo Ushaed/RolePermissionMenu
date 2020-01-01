@@ -25,6 +25,6 @@ class RolesAuth
             }
         }
         // none authorized request
-        return response('Unauthorized Action', 403);
+        return redirect()->back()->with(['type'=>'error','message'=>'Unauthorized Action']);
     }
 }
