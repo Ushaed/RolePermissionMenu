@@ -27,7 +27,7 @@ class AuthController extends Controller
 
     public function home()
     {
-        return 'home';
+        return view('home');
     }
 
     public function logout()

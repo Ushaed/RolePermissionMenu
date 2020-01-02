@@ -35,7 +35,7 @@ Route::group(['middleware'=>'auth'],function(){
         Route::get('/create','PermissionController@create')->name('permissions.create');
         Route::get('/{id}','PermissionController@show')->name('permissions.show');
         Route::put('/{id}','PermissionController@update')->name('permissions.update');
-        Route::get('/edit/{id}','PermissionController@edit')->name('permissions.edit');
+        Route::get('/role/{id}','PermissionController@PermissionRole')->name('permissions.role');
         Route::post('/store/ajax','PermissionController@storeajax')->name('permissions.store.ajax');
         Route::get('/exist','PermissionController@exist')->name('permissions.exist');
 

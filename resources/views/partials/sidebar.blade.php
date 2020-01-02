@@ -67,7 +67,7 @@
                     <a href="#" class="nav-link {{ $prefix == '/permissions' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-chess"></i>
                         <p>
-                            Permissions
+                            Permission
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
