@@ -33,11 +33,8 @@ Route::group(['middleware'=>'auth'],function(){
         Route::get('/','PermissionController@index')->name('permissions.index');
         Route::post('/','PermissionController@store')->name('permissions.store');
         Route::get('/create','PermissionController@create')->name('permissions.create');
-        Route::get('/{id}','PermissionController@show')->name('permissions.show');
-        Route::put('/{id}','PermissionController@update')->name('permissions.update');
         Route::get('/role/{id}','PermissionController@PermissionRole')->name('permissions.role');
-        Route::post('/store/ajax','PermissionController@storeajax')->name('permissions.store.ajax');
-        Route::get('/exist','PermissionController@exist')->name('permissions.exist');
+        Route::get('/add/role/{id}','PermissionController@PermissionRoleAdd')->name('permissions.role.add');
 
     });
 });

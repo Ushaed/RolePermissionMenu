@@ -12,10 +12,13 @@ class PermissionController extends Controller
     public function index()
     {
         $role = Role::all();
-//        dd($role);
         return view("Permission.index",compact('role'));
+    }
 
-//        dd($permissions->toArray());
+    public function create()
+    {
+        $role = Role::all();
+        return view('Permission.create',compact('role'));
     }
 
     public function PermissionRole($id)
@@ -23,5 +26,13 @@ class PermissionController extends Controller
         $role = Role::where('id',$id)->first();
         $permissions = $role->permissions;
         return response()->json($permissions);
+    }
+
+    public function PermissionRoleAdd($id)
+    {
+        $allAvailablePermission = Permission::all();
+        $role = Role::where('id',$id)->first();
+        $permissions = $role->permissions;
+        return response()->json(['permission'=>$permissions,'allAvailablePermission'=>$allAvailablePermission]);
     }
 }

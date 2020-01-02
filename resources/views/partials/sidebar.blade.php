@@ -73,7 +73,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href=""
+                            <a href="{{ route('permissions.create') }}"
                                class="nav-link {{ $route == 'permissions.create' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Permission</p>
