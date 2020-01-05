@@ -33,6 +33,7 @@ Route::group(['middleware'=>'auth'],function(){
         Route::get('/','PermissionController@index')->name('permissions.index');
         Route::post('/','PermissionController@store')->name('permissions.store');
         Route::get('/create','PermissionController@create')->name('permissions.create');
+        Route::get('/show','PermissionController@show')->name('permissions.show');
         Route::get('/role/{id}','PermissionController@PermissionRole')->name('permissions.role');
         Route::get('/add/role/{id}','PermissionController@PermissionRoleAdd')->name('permissions.role.add');
 

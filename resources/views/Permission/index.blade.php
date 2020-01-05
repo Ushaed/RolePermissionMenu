@@ -14,7 +14,7 @@
 
 @endpush
 @section('content')
-    <p><a href="{{ route('permissions.create') }}" class="btn btn-info"><i class="fas fa-plus"></i> Add Permission</a></p>
+    <p><a href="{{ route('permissions.show') }}" class="btn btn-info"><i class="fas fa-plus"></i> Add Permission</a></p>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Manage Permission</h3>

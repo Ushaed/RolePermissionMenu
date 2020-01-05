@@ -49,7 +49,6 @@
     </div>
     <script>
         $(function () {
-            // Summernote
             $('.textarea').summernote()
         })
     </script>
@@ -66,7 +65,6 @@
                     url: "{{ route('permissions.role.add','') }}" + '/' + id,
                     dataType: "json",
                     success:function (response) {
-                        console.log(response);
                         let html = '';
                         html += '<table class="table table-bordered table-striped table-hover text-center" id="dataTable"> ' +
                             '<thead> ' +
@@ -85,7 +83,6 @@
                             });
                             let controller = item.controller.split("\\");
                             let length_controller = controller.length;
-
                             html += '<tr>' +
                                 '<td>'+ controller[length_controller-1] +'</td>' +
                                 '<td>'+ item.method +'</td>';
@@ -96,12 +93,11 @@
                                 }
                                 html +='</tr>';
                             key = 0;
-                            console.log(key);
                         });
                         html += '</tbody></table>';
                         $("#table_of_permission").html(html);
                     },
-                    error: function (response) {
+                    error: function () {
                         alert('Select a role');
                     }
                 })

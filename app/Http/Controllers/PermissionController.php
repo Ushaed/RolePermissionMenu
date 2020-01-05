@@ -21,6 +21,10 @@ class PermissionController extends Controller
         return view('Permission.create',compact('role'));
     }
 
+    public function show()
+    {
+        return view('Permission.show');
+    }
     public function PermissionRole($id)
     {
         $role = Role::where('id',$id)->first();
